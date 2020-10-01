@@ -9,7 +9,7 @@ owm = pyowm.OWM('6b89460e9aa402f788f427ec417cb2a8', language="RU")
 @bot.message_handler(content_types=['text'])
 def handle_message(message):
 
-	observation = owm.weather_at_place(message)
+	observation = owm.weather_at_place(message.text)
 	w = observation.get_weather()
 
 	temp = w.get_temperature('celsius')['temp']
