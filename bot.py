@@ -3,16 +3,16 @@ import pyowm
 
 
 bot = telebot.TeleBot('1255681490:AAFaTCHYuZOQA2teXDHiN7JVVNHjtsuxr4g')  # апи телеграмбота
-owm = pyowm.OWM('6b89460e9aa402f788f427ec417cb2a8', language = "RU")
+owm = pyowm.OWM('6b89460e9aa402f788f427ec417cb2a8', language="RU")
 
 
 @bot.message_handler(content_types=['text'])
 def handle_message(message):
 
-	mgr = owm.weather_manager()
-	observation = mgr.weather_at_place(message.text)
-	w = observation.weather
-	temp = w.temperature('celsius')['temp']
+	observation = owm.weather_at_place(message)
+	w = observation.get_weather()
+
+	temp = w.get_temperature('celsius')['temp']
 
 	ans = ('В городе ' + message.text + ' сейчас ' + w.detailed_status) + '\n'
 
