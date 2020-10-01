@@ -14,7 +14,7 @@ def handle_message(message):
 
 	temp = w.get_temperature('celsius')['temp']
 
-	ans = ('В городе ' + message.text + ' сейчас ' + w.detailed_status) + '\n'
+	ans = ('В городе ' + message.text + ' сейчас ' + w.get_detailed_status()) + '\n'
 
 	ans += ('Температура воздуха около: ' + str(temp) + '°') + '\n\n'
 
