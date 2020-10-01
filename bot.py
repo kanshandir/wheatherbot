@@ -6,6 +6,11 @@ bot = telebot.TeleBot('1255681490:AAFaTCHYuZOQA2teXDHiN7JVVNHjtsuxr4g')  # ап�
 owm = pyowm.OWM('6b89460e9aa402f788f427ec417cb2a8', language="RU")
 
 
+@bot.message_handler(commands=['start'])
+def start_message(message):
+	bot.send_message(message.chat.id, "Укажите название города")
+
+
 @bot.message_handler(content_types=['text'])
 def handle_message(message):
 
