@@ -1,8 +1,8 @@
 import telebot
 import pyowm
-from pyowm.utils.config import get_default_config
+from pyowm.utils import config as cfg
 
-config_dict = get_default_config()
+config_dict = cfg.get_default_config()
 config_dict['language'] = 'ru'  # your language here
 
 
