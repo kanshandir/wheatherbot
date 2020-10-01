@@ -1,5 +1,5 @@
 import telebot
-from pyowm.owm import OWM
+import pyowm
 from pyowm.utils.config import get_default_config
 
 config_dict = get_default_config()
@@ -7,7 +7,7 @@ config_dict['language'] = 'ru'  # your language here
 
 
 bot = telebot.TeleBot('1255681490:AAFaTCHYuZOQA2teXDHiN7JVVNHjtsuxr4g')  # апи телеграмбота
-owm = OWM('6b89460e9aa402f788f427ec417cb2a8')  # апи с сайта погоды и перевод на русский
+owm = pyowm.OWM('6b89460e9aa402f788f427ec417cb2a8')  # апи с сайта погоды и перевод на русский
 
 
 @bot.message_handler(content_types=['text'])
